@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "description": "portfolio using vuejs and boilerplateHTML",
+  "main": "index.html",
+  "authors": [
+    "Brice HPC"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bulma": "^0.2.3",
+    "vue": "^2.1.4",
+    "modernizr": "^3.3.1"
+  }
+}
