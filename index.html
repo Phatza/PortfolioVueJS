@@ -17,6 +17,66 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div id="app">
+          <header class="header">
+            <nav class="nav" role="navigation">
+              <div class="nav-left">
+                <a class="nav-item is-brand" href="#">
+                  <img src="http://bulma.io/images/bulma-type.png" alt="Bulma logo">
+                </a>
+              </div>
+
+              <div class="nav-center">
+                <a class="nav-item" href="#">
+                  <span class="icon">
+                    <i class="fa fa-github"></i>
+                  </span>
+                </a>
+                <a class="nav-item" href="#">
+                  <span class="icon">
+                    <i class="fa fa-twitter"></i>
+                  </span>
+                </a>
+              </div>
+
+              <span @click="isToggle" class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+
+              <transition name="bounceInDown">
+                <responsive-menu v-show="mobileMenuVisible"></responsive-menu>
+              </transition>
+
+              <div class="nav-right nav-menu">
+                <a class="nav-item is-tab" href="#">
+                  Home
+                </a>
+                <a class="nav-item is-tab" href="#">
+                  Documentation
+                </a>
+                <a class="nav-item is-tab" href="#">
+                  Blog
+                </a>
+              </div>
+            </nav>
+          </header>
+
+          <main>
+            <slot v-if="visible" name="block">
+              je suis le slot block !
+            </slot>
+
+            <slot v-if='visible' name="block1">
+              je suis le slot block1 !
+            </slot>
+            <slot v-if='visible' name="block2">
+              je suis le slot block2 !
+            </slot>
+          </main>
+
+        </div>
 
         <script src="bower_components/vue/dist/vue.js"></script>
         <script src="assets/js/main.js"></script>

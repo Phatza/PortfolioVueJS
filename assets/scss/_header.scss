@@ -1,48 +1,73 @@
 // main: ./base.scss
 
-// Elastic Header Only on Mobile and Tablet
+// Responsive Menu CSS transition Effect when ENTER
+@-webkit-keyframes bounceInDown {
+    0%,
+    100%,
+    60%,
+    75%,
+    90% {
+        -webkit-animation-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    }
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -3000px, 0);
+        transform: translate3d(0, -3000px, 0);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 25px, 0);
+        transform: translate3d(0, 25px, 0);
+    }
+    75% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0);
+    }
+    90% {
+        -webkit-transform: translate3d(0, 5px, 0);
+        transform: translate3d(0, 5px, 0);
+    }
+    100% {
+        -webkit-transform: none;
+        transform: none;
+    }
+}
 
-h1 {
-  font-weight: 300;
-  font-size: 1.8em;
-  margin-top: 0;
+@keyframes bounceInDown {
+    0%,
+    100%,
+    60%,
+    75%,
+    90% {
+        -webkit-animation-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    }
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -3000px, 0);
+        transform: translate3d(0, -3000px, 0);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 25px, 0);
+        transform: translate3d(0, 25px, 0);
+    }
+    75% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0);
+    }
+    90% {
+        -webkit-transform: translate3d(0, 5px, 0);
+        transform: translate3d(0, 5px, 0);
+    }
+    100% {
+        -webkit-transform: none;
+        transform: none;
+    }
 }
-a {
-  color: #fff;
-}
-.draggable-header-view {
-  background-color: #fff;
-  box-shadow: 0 4px 16px rgba(0,0,0,.15);
-  width: 100%;
-  min-height: 300px;
-  overflow: hidden;
-  margin: 30px auto;
-  position: relative;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 300;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.draggable-header-view .bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-.draggable-header-view .header, .draggable-header-view .content {
-  position: relative;
-  z-index: 1;
-  padding: 30px;
-  box-sizing: border-box;
-}
-.draggable-header-view .header {
-  height: 160px;
-}
-.draggable-header-view .content {
-  color: #333;
-  line-height: 1.5em;
+
+.bounceInDown-enter-active, .bounceInDown-leave-active {
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
 }
