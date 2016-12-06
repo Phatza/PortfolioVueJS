@@ -19,7 +19,7 @@
         <![endif]-->
         <div id="app">
           <header class="header">
-            <nav class="nav" role="navigation">
+            <nav class="nav is-hidden-desktop" role="navigation" >
               <div class="nav-left">
                 <a class="nav-item is-brand" href="#">
                   <img src="http://bulma.io/images/bulma-type.png" alt="Bulma logo">
@@ -40,40 +40,57 @@
               </div>
 
               <span @click="isToggle" class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <svg height="100%" width="100%">
+                  <transition name="fade" mode="out-in">
+                    <g v-if="mobileMenuVisible">
+                      <line x1="10" y1="40" x2="40" y2="10" style="stroke: black; stroke-width: 3;"></line>
+                      <line x1="10" y1="10" x2="40" y2="40" style="stroke: black; stroke-width: 3;"></line>
+                    </g>
+                    <g v-else>
+                      <line x1="10" y1="15" x2="40" y2="15" style="stroke: black; stroke-width: 3"></line>
+                      <line x1="10" y1="25" x2="40" y2="25" style="stroke: black; stroke-width: 3"></line>
+                      <line x1="10" y1="35" x2="40" y2="35" style="stroke: black; stroke-width: 3"></line>
+                    </g>
+                  </transition>
+                </svg>
               </span>
 
-              <transition name="bounceInDown">
-                <responsive-menu v-show="mobileMenuVisible"></responsive-menu>
+              <transition name="menuAppear">
+                <div class="small-devices" v-show="mobileMenuVisible">
+                  <ul class="menu-list">
+                    <li><a @click.prevent="visible = link" href="" v-for="link in links">{{ link }}</a></li>
+                  </ul>
+                </div>
               </transition>
 
-              <div class="nav-right nav-menu">
-                <a class="nav-item is-tab" href="#">
-                  Home
-                </a>
-                <a class="nav-item is-tab" href="#">
-                  Documentation
-                </a>
-                <a class="nav-item is-tab" href="#">
-                  Blog
-                </a>
-              </div>
             </nav>
           </header>
 
           <main>
-            <slot v-if="visible" name="block">
-              je suis le slot block !
-            </slot>
+            <block>
 
-            <slot v-if='visible' name="block1">
-              je suis le slot block1 !
-            </slot>
-            <slot v-if='visible' name="block2">
-              je suis le slot block2 !
-            </slot>
+              <template v-if="visible === 'Keep Calm'">
+                <div id="kcalm">
+                  <h1 class="title is-1">{{ visible }}</h1>
+                </div>
+              </template>
+              <template v-if="visible === 'Ma Petite Poulette'">
+                <div id="mpp">
+                  <h1 class="title is-1">{{ visible }}</h1>
+                </div>
+              </template>
+              <template v-if="visible === 'Boogie Man'">
+                <div id="bgm">
+                  <h1 class="title is-1">{{ visible }}</h1>
+                </div>
+              </template>
+              <template v-if="visible === 'Sites Wordpress'">
+                <div id="wp">
+                  <h1 class="title is-1">{{ visible }}</h1>
+                </div>
+              </template>
+
+            </block>
           </main>
 
         </div>

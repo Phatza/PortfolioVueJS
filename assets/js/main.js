@@ -1,60 +1,31 @@
 // My test component
 Vue.component('block', {
+  porps: ['visible'],
   template:
     `
-      <div>
-        <p><slot></slot></p>
-      </div>
+      <section>
+        <slot></slot>
+      </section>
     `
 })
-
-Vue.component('block1', {
-  template:
-    `
-      <div>
-        <p><slot></slot></p>
-      </div>
-    `
-})
-
-Vue.component('block2', {
-  template:
-    `
-      <div>
-        <p><slot></slot></p>
-      </div>
-    `
-})
-
-Vue.component('responsive-menu', {
-  template:
-    `
-    <div class="responsiveMenu">
-      <ul class="menu-list">
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Customers</a></li>
-      </ul>
-    </div>
-    `
-})
-
-
-
 
 // Instance VueJS
 let app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello World',
-    visible: true,
+    links: ['Keep Calm', 'Ma Petite Poulette', 'Boogie Man', 'Sites Wordpress'],
+    visible: 'Keep Calm',
     mobileMenuVisible: false
   },
   methods: {
     isActive() {
       this.visible = !this.visible
     },
+    // Toggle show/hide Menu Mobile & Tablet Devices
     isToggle() {
       this.mobileMenuVisible = !this.mobileMenuVisible
     }
+  },
+  computed: {
   }
 })

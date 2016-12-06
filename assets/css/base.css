@@ -1,3 +1,8 @@
+/* ========================================================================== Custom reset Style ========================================================================== */
+main { height: 100vh; }
+
+section { height: 100%; }
+
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 /* What follows is the result of much research on cross-browser styling. Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal, Kroc Camen, and the H5BP dev community and team. */
 /* ========================================================================== Base styles: opinionated defaults ========================================================================== */
@@ -186,6 +191,66 @@ optgroup { font-weight: bold; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 td, th { padding: 0; }
+
+.small-devices { position: absolute; width: 100%; background: white; top: 100%; box-shadow: #333333 0px 0px 20px; }
+
+.fade-enter-active, .fade-leave-active { transition: opacity .7s; }
+
+.fade-enter, .fade-leave-active { opacity: 0; }
+
+.menuAppear-enter-active { -webkit-animation: bounceInDown .7s; animation: bounceInDown .7s; }
+
+.menuAppear-leave-active { -webkit-animation: bounceOutUp 1s; animation: bounceOutUp 1s; }
+
+@-webkit-keyframes bounceInDown { 0%, 100%, 60%, 75%, 90% { -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% { opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0); }
+  60% { opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0); }
+  75% { -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0); }
+  90% { -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); }
+  100% { -webkit-transform: none;
+    transform: none; } }
+
+@keyframes bounceInDown { 0%, 100%, 60%, 75%, 90% { -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% { opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0); }
+  60% { opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0); }
+  75% { -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0); }
+  90% { -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); }
+  100% { -webkit-transform: none;
+    transform: none; } }
+
+@-webkit-keyframes bounceOutUp { 20% { -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0); }
+  40%, 45% { opacity: 1;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0); }
+  100% { opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0); } }
+
+@keyframes bounceOutUp { 20% { -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0); }
+  40%, 45% { opacity: 1;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0); }
+  100% { opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0); } }
+
+#kcalm { background: url("../img/keep-calm-bg.jpg") no-repeat fixed center center; height: 100%; }
 
 /*! bulma.io v0.2.3 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround { from { transform: rotate(0deg); }

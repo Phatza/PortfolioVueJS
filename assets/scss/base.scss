@@ -1,6 +1,10 @@
 // compileCompact: ../css/base.css
 
-@import "./reset.scss";
+@import "./_reset.scss";
+@import "./_header.scss";
+
+// Import Section SCSS files
+@import "./section/_kcalm.scss";
 
 // Import Bulma Sass
-@import "../../bower_components/bulma/bulma.sass"
+@import "../../bower_components/bulma/bulma.sass";

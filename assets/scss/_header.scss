@@ -1,6 +1,37 @@
 // main: ./base.scss
 
-// Responsive Menu CSS transition Effect when ENTER
+// Mobile & Tablet Navigation Style
+
+
+// Toggle Menu List Style
+.small-devices {
+  position: absolute;
+  width: 100%;
+  background: white;
+  top: 100%;
+  box-shadow: rgb(51, 51, 51) 0px 0px 20px;
+}
+
+// Toggle Menu Button Style
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .7s;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+
+
+// Using VueJS CSS class
+.menuAppear-enter-active {
+    -webkit-animation: bounceInDown .7s;
+    animation: bounceInDown .7s;
+}
+.menuAppear-leave-active {
+    -webkit-animation: bounceOutUp 1s;
+    animation: bounceOutUp 1s;
+}
+
+// Responsive Menu CSS Animation  when ENTER
 @-webkit-keyframes bounceInDown {
     0%,
     100%,
@@ -67,7 +98,39 @@
     }
 }
 
-.bounceInDown-enter-active, .bounceInDown-leave-active {
-    -webkit-animation-name: bounceInDown;
-    animation-name: bounceInDown;
+// Responsive Menu CSS Animation when LEAVE
+@-webkit-keyframes bounceOutUp {
+    20% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0)
+    }
+    40%,
+    45% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 20px, 0);
+        transform: translate3d(0, 20px, 0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -2000px, 0);
+        transform: translate3d(0, -2000px, 0)
+    }
+}
+
+@keyframes bounceOutUp {
+    20% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0)
+    }
+    40%,
+    45% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 20px, 0);
+        transform: translate3d(0, 20px, 0)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -2000px, 0);
+        transform: translate3d(0, -2000px, 0)
+    }
 }
