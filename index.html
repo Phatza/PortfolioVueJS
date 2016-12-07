@@ -17,7 +17,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="app">
+        <div id="app" >
           <header class="header">
             <nav class="nav is-hidden-desktop" role="navigation" >
               <div class="nav-left">
@@ -68,28 +68,162 @@
 
           <main>
             <block>
+              <transition name="custom-classes-transition"
+              enter-active-class="flipInX"
+              leave-active-class="flipOutX" appear mode="out-in">
 
-              <template v-if="visible === 'Keep Calm'">
-                <div id="kcalm">
-                  <h1 class="title is-1">{{ visible }}</h1>
-                </div>
-              </template>
-              <template v-if="visible === 'Ma Petite Poulette'">
-                <div id="mpp">
-                  <h1 class="title is-1">{{ visible }}</h1>
-                </div>
-              </template>
-              <template v-if="visible === 'Boogie Man'">
-                <div id="bgm">
-                  <h1 class="title is-1">{{ visible }}</h1>
-                </div>
-              </template>
-              <template v-if="visible === 'Sites Wordpress'">
-                <div id="wp">
-                  <h1 class="title is-1">{{ visible }}</h1>
-                </div>
-              </template>
+                <template v-if="visible === 'A Propos'">
+                  <div id="about">
+                    <div class="columns">
+                      <div class="column">
+                        <div class="card">
+                          <div class="card-image">
+                            <figure class="image is-4by3">
+                              <img src="http://placehold.it/300x225" alt="">
+                            </figure>
+                          </div>
+                          <div class="card-content">
+                            <div class="media">
+                              <div class="media-content">
+                                <h1 class="title">{{ visible }}</h1>
+                              </div>
+                            </div>
 
+                            <div class="content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+
+                <template v-if="visible === 'Keep Calm'">
+                  <div id="kcalm" class="is-overlay">
+                    <div class="columns">
+                      <div class="column">
+                        <h1 class="title is-1">{{ visible }}</h1>
+                        <div class="card">
+                          <div class="card-image">
+                            <figure class="image is-4by3">
+                              <img src="assets/img/keep-calm-situation.png" alt="">
+                            </figure>
+                          </div>
+                          <div class="card-content">
+                            <div class="media">
+                              <div class="media-left">
+                                <figure class="image is-32x32">
+                                  <img src="http://placehold.it/64x64" alt="Image">
+                                </figure>
+                              </div>
+                              <div class="media-content">
+                                <p class="title is-5">John Smith</p>
+                                <p class="subtitle is-6">@johnsmith</p>
+                              </div>
+                            </div>
+
+                            <div class="content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                              Phasellus nec iaculis mauris. <a href="#">@bulmaio</a>.
+                              <a href="#">#css</a> <a href="#">#responsive</a>
+                              <br>
+                              <small>11:09 PM - 1 Jan 2016</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+
+                <template v-if="visible === 'Ma Petite Poulette'">
+                  <div id="mpp">
+                    <div class="columns">
+                      <div class="column">
+                        <h1 class="title is-1">{{ visible }}</h1>
+                        <div class="card">
+                          <div class="card-image">
+                            <figure class="image is-4by3">
+                              <img src="http://placehold.it/300x225" alt="">
+                            </figure>
+                          </div>
+                          <div class="card-content">
+                            <div class="media">
+                              <div class="media-left">
+                                <figure class="image is-32x32">
+                                  <img src="http://placehold.it/64x64" alt="Image">
+                                </figure>
+                              </div>
+                              <div class="media-content">
+                                <p class="title is-5">John Smith</p>
+                                <p class="subtitle is-6">@johnsmith</p>
+                              </div>
+                            </div>
+
+                            <div class="content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                              Phasellus nec iaculis mauris. <a href="#">@bulmaio</a>.
+                              <a href="#">#css</a> <a href="#">#responsive</a>
+                              <br>
+                              <small>11:09 PM - 1 Jan 2016</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+
+                <template v-if="visible === 'Boogie Man'">
+                  <div id="bgm">
+                    <div class="columns">
+                      <div class="column">
+                        <h1 class="title is-1">{{ visible }}</h1>
+                        <div class="card">
+                          <div class="card-image">
+                            <figure class="image is-4by3">
+                              <img src="http://placehold.it/300x225" alt="">
+                            </figure>
+                          </div>
+                          <div class="card-content">
+                            <div class="media">
+                              <div class="media-left">
+                                <figure class="image is-32x32">
+                                  <img src="http://placehold.it/64x64" alt="Image">
+                                </figure>
+                              </div>
+                              <div class="media-content">
+                                <p class="title is-5">John Smith</p>
+                                <p class="subtitle is-6">@johnsmith</p>
+                              </div>
+                            </div>
+
+                            <div class="content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                              Phasellus nec iaculis mauris. <a href="#">@bulmaio</a>.
+                              <a href="#">#css</a> <a href="#">#responsive</a>
+                              <br>
+                              <small>11:09 PM - 1 Jan 2016</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+
+                <template v-if="visible === 'Sites Wordpress'">
+                  <div id="wp">
+                    <div class="columns">
+                      <div class="column">
+                        <h1 class="title is-1">{{ visible }}</h1>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+
+              </transition>
             </block>
           </main>
 

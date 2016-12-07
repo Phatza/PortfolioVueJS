@@ -2,6 +2,12 @@
 
 // Mobile & Tablet Navigation Style
 
+@media screen and (max-width: 979px) {
+  .nav-toggle {
+      display: block !important;
+  }
+}
+
 
 // Toggle Menu List Style
 .small-devices {

@@ -13,8 +13,8 @@ Vue.component('block', {
 let app = new Vue({
   el: '#app',
   data: {
-    links: ['Keep Calm', 'Ma Petite Poulette', 'Boogie Man', 'Sites Wordpress'],
-    visible: 'Keep Calm',
+    links: ['A Propos', 'Keep Calm', 'Ma Petite Poulette', 'Boogie Man', 'Sites Wordpress'],
+    visible: 'A Propos',
     mobileMenuVisible: false
   },
   methods: {
@@ -25,7 +25,5 @@ let app = new Vue({
     isToggle() {
       this.mobileMenuVisible = !this.mobileMenuVisible
     }
-  },
-  computed: {
   }
 })

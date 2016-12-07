@@ -1,10 +1,12 @@
 // compileCompact: ../css/base.css
 
+// This is a Mobile-first Project, @media rules start from 768px
+
 @import "./_reset.scss";
 @import "./_header.scss";
 
 // Import Section SCSS files
-@import "./section/_kcalm.scss";
+@import "./_section.scss";
 
 // Import Bulma Sass
 @import "../../bower_components/bulma/bulma.sass";
