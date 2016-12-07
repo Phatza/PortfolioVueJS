@@ -9,13 +9,37 @@
 }
 
 
-// Toggle Menu List Style
+// Responsive display Menu List Style
 .small-devices {
   position: absolute;
-  width: 100%;
-  background: white;
   top: 100%;
+  background: white;
   box-shadow: rgb(51, 51, 51) 0px 0px 20px;
+  width: 100%;
+}
+
+.wide-devices {
+  position: absolute;
+  top: 50%;
+  transform: translate(33%, -50%);
+  color: #000;
+  z-index: 999;
+
+  ul.menu-list {
+    background-color: none;
+
+    a {
+      padding: 2rem;
+      color: $white;
+      text-shadow: 5px 5px 20px $black;
+      font-weight: bolder;
+
+      &:hover {
+        color: $white;
+        background: none;
+      }
+    }
+  }
 }
 
 // Toggle Menu Button Style
@@ -24,17 +48,6 @@
 }
 .fade-enter, .fade-leave-active {
   opacity: 0;
-}
-
-
-// Using VueJS CSS class
-.menuAppear-enter-active {
-    -webkit-animation: bounceInDown .7s;
-    animation: bounceInDown .7s;
-}
-.menuAppear-leave-active {
-    -webkit-animation: bounceOutUp 1s;
-    animation: bounceOutUp 1s;
 }
 
 // Responsive Menu CSS Animation  when ENTER
@@ -103,6 +116,10 @@
         transform: none;
     }
 }
+.bounceInDown {
+    -webkit-animation: bounceInDown .7s;
+    animation: bounceInDown .7s;
+}
 
 // Responsive Menu CSS Animation when LEAVE
 @-webkit-keyframes bounceOutUp {
@@ -139,4 +156,8 @@
         -webkit-transform: translate3d(0, -2000px, 0);
         transform: translate3d(0, -2000px, 0)
     }
+}
+.bounceOutUp {
+    -webkit-animation: bounceOutUp 1s;
+    animation: bounceOutUp 1s;
 }
