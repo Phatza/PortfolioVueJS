@@ -59,11 +59,7 @@
               enter-active-class="bounceInDown"
               leave-active-class="bounceOutUp">
                 <div class="small-devices" v-show="mobileMenuVisible">
-                  <navigation>
-                    <slot>
-                      <a @click.prevent="visibleLink = link" href="javascript:;" v-for="link in links">{{ link }}</a>
-                    </slot>
-                  </navigation>
+                  <navigation :links="links"></navigation>
                 </div>
               </transition>
 
@@ -73,14 +69,10 @@
           <main>
 
             <div class="wide-devices is-hidden-touch">
-              <navigation>
-                <slot>
-                  <a @click.prevent="visibleLink = link" href="javascript:;" v-for="link in links" class="title is-2">{{ link }}</a>
-                </slot>
-              </navigation>
+              <navigation :links="links"></navigation>
             </div>
 
-            <block>
+            <section>
               <transition name="custom-classes-transition"
               enter-active-class="flipInX"
               leave-active-class="flipOutX" appear mode="out-in">
@@ -88,9 +80,8 @@
                 <template v-if="visibleLink === 'A Propos'">
                   <div id="about">
                     <project :visibleLink="visibleLink">
-                      <slot>
-                        <img src="http://placehold.it/300x300" alt="">
-                      </slot>
+                      <img slot="img" src="http://placehold.it/300x300" alt="">
+                      <p slot="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
                     </project>
                   </div>
                 </template>
@@ -98,9 +89,8 @@
                 <template v-if="visibleLink === 'Keep Calm'">
                   <div id="kcalm">
                     <project :visibleLink="visibleLink">
-                      <slot>
-                        <img src="http://placehold.it/300x300" alt="">
-                      </slot>
+                      <img slot="img" src="http://placehold.it/300x300" alt="">
+                      <p slot="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
                     </project>
                   </div>
                 </template>
@@ -108,9 +98,8 @@
                 <template v-if="visibleLink === 'Ma Petite Poulette'">
                   <div id="mpp">
                     <project :visibleLink="visibleLink">
-                      <slot>
-                        <img src="http://placehold.it/300x300" alt="">
-                      </slot>
+                      <img slot="img" src="http://placehold.it/300x300" alt="">
+                      <p slot="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
                     </project>
                   </div>
                 </template>
@@ -118,9 +107,8 @@
                 <template v-if="visibleLink === 'Boogie Man'">
                   <div id="bgm">
                     <project :visibleLink="visibleLink">
-                      <slot>
-                        <img src="http://placehold.it/300x300" alt="">
-                      </slot>
+                      <img slot="img" src="http://placehold.it/300x300" alt="">
+                      <p slot="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
                     </project>
                   </div>
                 </template>
@@ -129,14 +117,14 @@
                   <div id="wp">
                     <div class="columns">
                       <div class="column">
-                        <h1 class="title is-1">{{ visibleLink }}</h1>
+                        
                       </div>
                     </div>
                   </div>
                 </template>
 
               </transition>
-            </block>
+            </section>
           </main>
 
         </div>

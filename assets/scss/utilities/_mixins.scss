@@ -47,3 +47,10 @@ $widescreen: 1180px !default;
     @content
   }
 };
+
+// Background Section
+@mixin bgSection($link) {
+  background: url($link) no-repeat fixed;
+  background-size: cover;
+  background-position: center;
+}

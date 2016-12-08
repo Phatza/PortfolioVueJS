@@ -2334,15 +2334,15 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 td, th { padding: 0; }
 
-@media screen and (max-width: 979px) { .nav-toggle { display: block !important; } }
+@media screen and (min-width: 769px) and (max-width: 979px) { .nav-toggle { display: block !important; } }
 
 .small-devices { position: absolute; top: 100%; background: white; box-shadow: #333333 0px 0px 20px; width: 100%; }
 
-.wide-devices { position: absolute; top: 50%; transform: translate(33%, -50%); color: #000; z-index: 999; }
+.wide-devices { position: absolute; top: 50%; transform: translate(33%, -50%); color: #0a0a0a; z-index: 999; }
 
-.wide-devices ul.menu-list { background-color: none; }
+.wide-devices ul.menu-list { background: rgba(36, 36, 36, 0.3); }
 
-.wide-devices ul.menu-list a { padding: 2rem; color: white; text-shadow: 5px 5px 20px #0a0a0a; font-weight: bolder; }
+.wide-devices ul.menu-list a { padding: 2rem; color: white; font-weight: bolder; }
 
 .wide-devices ul.menu-list a:hover { color: white; background: none; }
 
@@ -2468,7 +2468,7 @@ main div[id] .columns .card p { text-align: justify; }
 
 .flipOutX { -webkit-animation: flipOutX 0.7s; animation: flipOutX 0.7s; -webkit-backface-visibility: visible !important; backface-visibility: visible !important; }
 
-#about { background: url("../img/a-propos-bg.jpg") no-repeat fixed; background-size: cover; }
+#about { background: url("../img/a-propos-bg.jpg") no-repeat fixed; background-size: cover; background-position: center; }
 
 #about .card { background-color: transparent; box-shadow: none; }
 
@@ -2477,3 +2477,5 @@ main div[id] .columns .card p { text-align: justify; }
 #about .card .card-content { background-color: white; box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1); }
 
 #kcalm { background: url("../img/keep-calm-bg.jpg") no-repeat fixed; background-size: cover; background-position: center; }
+
+#bgm { background: url("../img/bgm-bg.jpg") no-repeat fixed; background-size: cover; background-position: center; }

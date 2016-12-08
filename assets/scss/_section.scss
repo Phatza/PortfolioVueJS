@@ -147,8 +147,7 @@ main {
 
 // Specific Section STYLE
 #about {
-    background: url('../img/a-propos-bg.jpg') no-repeat fixed;
-    background-size: cover;
+  @include bgSection('../img/a-propos-bg.jpg');
 
     .card {
       background-color: transparent;
@@ -169,7 +168,9 @@ main {
 }
 
 #kcalm {
-    background: url('../img/keep-calm-bg.jpg') no-repeat fixed;
-    background-size: cover;
-    background-position: center;
+  @include bgSection('../img/keep-calm-bg.jpg');
+}
+
+#bgm {
+  @include bgSection('../img/bgm-bg.jpg');
 }

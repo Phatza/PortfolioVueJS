@@ -1,25 +1,22 @@
-// Section Component
-Vue.component('block', {
-  template:
-    `
-      <section>
-        <slot></slot>
-      </section>
-    `
-})
-
 // Navigation Component
 Vue.component('navigation', {
+  props:['links'],
   template:
     `
     <ul class="menu-list">
-      <li class="has-text-centered"><slot></slot></li>
+      <li class="has-text-centered" v-for="link in links">
+        <a @click="currentLink(link)" href="javascript:;">{{ link }}</a>
+      </li>
     </ul>
-    `
+    `,
+  methods: {
+    currentLink(link) {
+      this.$parent.visibleLink = link
+    }
+  }
 })
 
 Vue.component('project', {
-  props: ['visibleLink'],
   template:
     `
     <div class="columns">
@@ -27,20 +24,25 @@ Vue.component('project', {
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <slot></slot>
+              <slot name="img"></slot>
             </figure>
           </div>
           <div class="card-content">
             <h1 class="title">{{ visibleLink }}</h1>
 
             <div class="content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
+              <slot name="desc"></slot>
             </div>
           </div>
         </div>
       </div>
     </div>
-    `
+    `,
+  data() {
+    return {
+      visibleLink: this.$parent.visibleLink
+    }
+  }
 })
 
 // Instance VueJS
