@@ -30,12 +30,46 @@
 
     a {
       padding: 2rem;
-      color: $white;
-      font-weight: bolder;
+    	color: $white;
+    	text-transform: uppercase;
+    	font-weight: bold;
 
       &:hover {
         color: $white;
         background: none;
+
+        &::before, &::after {
+          opacity: 1;
+        	-webkit-transform: translateX(0px);
+        	-moz-transform: translateX(0px);
+        	transform: translateX(0px);
+        }
+      }
+
+      &::before {
+        display: inline-block;
+      	opacity: 0;
+      	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+      	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+      	transition: transform 0.3s, opacity 0.2s;
+        margin-right: 10px;
+      	content: '<';
+      	-webkit-transform: translateX(20px);
+      	-moz-transform: translateX(20px);
+      	transform: translateX(20px);
+      }
+
+      &::after {
+        display: inline-block;
+      	opacity: 0;
+      	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+      	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+      	transition: transform 0.3s, opacity 0.2s;
+        margin-left: 10px;
+      	content: '/>';
+      	-webkit-transform: translateX(-20px);
+      	-moz-transform: translateX(-20px);
+      	transform: translateX(-20px);
       }
     }
   }

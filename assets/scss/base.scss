@@ -3,6 +3,9 @@
 // Import Bulma Sass
 @import "../../bower_components/bulma/bulma.sass";
 
+// Import MDI Scss
+@import "../../bower_components/mdi/scss/materialdesignicons.scss";
+
 // This is a Mobile-first Project, @media rules start from 768px
 @import "utilities/_variables.scss";
 @import "utilities/_mixins.scss";

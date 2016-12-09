@@ -171,6 +171,21 @@ main {
   @include bgSection('../img/keep-calm-bg.jpg');
 }
 
+#mpp {
+  @include bgSection('../img/mpp-bg.jpg');
+}
+
 #bgm {
   @include bgSection('../img/bgm-bg.jpg');
+}
+
+#wp {
+  display: flex;
+  align-items: center;
+  
+  .columns {
+    margin-left: 30%;
+    flex-wrap: wrap;
+    height: auto;
+  }
 }

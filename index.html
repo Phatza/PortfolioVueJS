@@ -80,8 +80,10 @@
                 <template v-if="visibleLink === 'A Propos'">
                   <div id="about">
                     <project :visibleLink="visibleLink">
-                      <img slot="img" src="http://placehold.it/300x300" alt="">
-                      <p slot="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
+                      <img slot="img" src="assets/img/about-situation.jpeg" alt="">
+                      <p slot="desc">
+                        Hello ! Je m'appelle Brice HPC et je travaille actuellement chez PURJUS en tant que developpeur front-end junior. A l'agence, les projets sont variés : du "from scratch" avec l'aide de frameworks, aux CMS open-source orienté dynamique/e-commerce ou simple site vitrine...</p>
+
                     </project>
                   </div>
                 </template>
@@ -89,7 +91,7 @@
                 <template v-if="visibleLink === 'Keep Calm'">
                   <div id="kcalm">
                     <project :visibleLink="visibleLink">
-                      <img slot="img" src="http://placehold.it/300x300" alt="">
+                      <img slot="img" src="assets/img/keep-calm-situation.png" alt="">
                       <p slot="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
                     </project>
                   </div>
@@ -98,7 +100,7 @@
                 <template v-if="visibleLink === 'Ma Petite Poulette'">
                   <div id="mpp">
                     <project :visibleLink="visibleLink">
-                      <img slot="img" src="http://placehold.it/300x300" alt="">
+                      <img slot="img" src="assets/img/mpp-situation.png" alt="">
                       <p slot="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
                     </project>
                   </div>
@@ -107,7 +109,7 @@
                 <template v-if="visibleLink === 'Boogie Man'">
                   <div id="bgm">
                     <project :visibleLink="visibleLink">
-                      <img slot="img" src="http://placehold.it/300x300" alt="">
+                      <img slot="img" src="assets/img/bgm-situation.png" alt="">
                       <p slot="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a, laborum adipisci sint repudiandae doloribus quam itaque numquam reiciendis veniam delectus quo rem incidunt sapiente corporis deleniti laudantium officia perferendis!</p>
                     </project>
                   </div>
@@ -115,11 +117,7 @@
 
                 <template v-if="visibleLink === 'Sites Wordpress'">
                   <div id="wp">
-                    <div class="columns">
-                      <div class="column">
-                        
-                      </div>
-                    </div>
+                    <wordpress></wordpress>
                   </div>
                 </template>
 
