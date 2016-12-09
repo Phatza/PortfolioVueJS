@@ -5,7 +5,7 @@ Vue.component('navigation', {
     `
     <ul class="menu-list">
       <li class="has-text-centered" v-for="link in links">
-        <a @click="currentLink(link)" href="javascript:;" :class="{'is-active' : visibleLink === link}" :data-hover="link">{{ link }}</a>
+        <a @click="currentLink(link)" href="javascript:;" :class="{'active' : visibleLink === link}">{{ link }}</a>
       </li>
     </ul>
     `,
@@ -66,18 +66,10 @@ Vue.component('wordpress', {
           <div class="card-content">
             <div class="content">
               <h2>{{ site.title }}</h2>
-              <a :href="site.url" class="button">
-                <span class="icon">
-                <svg height="25px" width="25px" viewBox="0 0 30 30">
-                  <path fill="#666" d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                </svg>
-                </span>
-                <span>Accèdez au site</span>
-              </a>
+              <a :href="site.url" class="button">Accèdez au site</a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
     `,
