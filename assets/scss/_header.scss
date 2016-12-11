@@ -86,19 +86,19 @@
 .active {
 
   &::before {
-    content: '<';
-    color: $red;
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    content: '<' !important;
+    color: $red !important;
+    opacity: 1 !important;
+    -webkit-transform: translateX(0) !important;
+    transform: translateX(0) !important;
   }
 
   &::after {
-    content: '/>';
-    color: $red;
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    content: '/>' !important;
+    color: $red !important;
+    opacity: 1 !important;
+    -webkit-transform: translateX(0) !important;
+    transform: translateX(0) !important;
   }
 }
 

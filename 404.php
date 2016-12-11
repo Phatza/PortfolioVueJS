@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Page Not Found</title>
+    <title>Brice Phatza HPC portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
@@ -53,8 +53,9 @@
     </style>
 </head>
 <body>
-    <h1>Page Not Found</h1>
-    <p>Sorry, but the page you were trying to view does not exist.</p>
+    <h1>404 : page non trouvé</h1>
+    <p>Désolé, mais la page que vous recherchez n'existe pas.</p>
+    <a href="http://portfolio.phatza-creation.com">Retour au site</a>
 </body>
 </html>
 <!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->

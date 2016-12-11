@@ -2356,9 +2356,9 @@ td, th { padding: 0; }
 
 .wide-devices ul.menu-list a::after { display: inline-block; opacity: 0; -webkit-transition: -webkit-transform .3s, opacity .2s, color 1s; transition: transform .3s, opacity .2s, color 1s; margin-left: 10px; content: '/>'; -webkit-transform: translateX(-20px); transform: translateX(-20px); }
 
-.active::before { content: '<'; color: #ff3860; opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
+.active::before { content: '<' !important; color: #ff3860 !important; opacity: 1 !important; -webkit-transform: translateX(0) !important; transform: translateX(0) !important; }
 
-.active::after { content: '/>'; color: #ff3860; opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
+.active::after { content: '/>' !important; color: #ff3860 !important; opacity: 1 !important; -webkit-transform: translateX(0) !important; transform: translateX(0) !important; }
 
 @-webkit-keyframes bounceInDown { 0%, 100%, 60%, 75%, 90% { -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
@@ -2426,7 +2426,7 @@ main div[id] .columns .column .card { margin: 0 auto; width: 400px; }
 
 @media screen and (max-width: 768px) { main div[id] .columns .column .card { width: 300px; } }
 
-main div[id] .columns .column .card h1 { font-weight: bold; }
+main div[id] .columns .column .card h1 { margin-top: 0; font-weight: bold; }
 
 main div[id] .columns .column .card a { color: #363636; font-weight: bold; -webkit-transition: border-bottom 0.35s ease-out; transition: border-bottom 0.35s ease-out; }
 
