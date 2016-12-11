@@ -5,7 +5,7 @@ Vue.component('navigation', {
     `
     <ul class="menu-list">
       <li class="has-text-centered" v-for="link in links">
-        <a @click="currentLink(link)" href="javascript:;" :class="{'active' : visibleLink === link}">{{ link }}</a>
+        <a @click="currentLink(link), mobileMenuVisible" href="javascript:;" :class="{'active' : visibleLink === link}">{{ link }}</a>
       </li>
     </ul>
     `,
@@ -17,6 +17,9 @@ Vue.component('navigation', {
   computed: {
     visibleLink() {
       return this.$parent.visibleLink
+    },
+    mobileMenuVisible() {
+      return  this.$parent.mobileMenuVisible = !this.$parent.mobileMenuVisible
     }
   }
 })
@@ -29,16 +32,14 @@ Vue.component('project', {
       <div class="column is-offset-6">
         <div class="card">
           <div class="card-image">
-            <figure class="image is-4by3">
-              <slot name="img"></slot>
-            </figure>
+            <slot name="video"></slot>
+            <slot name="img"></slot>
           </div>
           <div class="card-content">
             <h1 class="title">{{ visibleLink }}</h1>
 
-            <div class="content">
-              <slot name="desc"></slot>
-            </div>
+            <slot name="desc"></slot>
+
           </div>
         </div>
       </div>
@@ -56,17 +57,17 @@ Vue.component('wordpress', {
   template:
     `
     <div class="columns">
-      <div class="column is-one-third" v-for='site in wpSites'>
-        <<div class="card">
+      <div class="column is-one-third" v-for="site in wpSites">
+        <div class="card">
           <div class="card-image">
-            <figure class="image is-3by2">
+            <figure class="image">
               <img :src="site.image" alt="">
             </figure>
           </div>
           <div class="card-content">
             <div class="content">
               <h2>{{ site.title }}</h2>
-              <a :href="site.url" class="button">Accèdez au site</a>
+              <a :href="site.url" :title="'lien vers ' + site.title" target="_blank" class="button">Accèdez au site</a>
             </div>
           </div>
         </div>
@@ -77,38 +78,69 @@ Vue.component('wordpress', {
       return {
         wpSites: {
           bettina: {
-            title: 'Bettina',
-            image: 'http://placehold.it/300x225',
-            url: 'http://fldslld'
+            title: 'Bettina Vermillon',
+            image: 'assets/img/situation/bettina-situation.jpg',
+            url: 'http://www.bettinavermillon.com/'
           },
           bastide: {
             title: 'Bastide',
-            image: 'http://placehold.it/300x225',
-            url: 'http://fldslld'
+            image: 'assets/img/situation/bastide-situation.jpg',
+            url: 'http://www.bastide-du-tinal.com/'
           },
           purjus: {
             title: 'Purjus',
-            image: 'http://placehold.it/300x225',
-            url: 'http://fldslld'
+            image: 'assets/img/situation/purjus-situation.jpg',
+            url: 'http://dev.purjus.fr/'
           },
           bateauGitePorquerolles: {
             title: 'Fa\'auva',
-            image: 'http://placehold.it/300x225',
-            url: 'http://fldslld'
+            image: 'assets/img/situation/bateau-situation.jpg',
+            url: 'http://www.bateau-gite-porquerolles.fr/'
           },
           couleurSoleil: {
             title: 'Couleur Soleil',
-            image: 'http://placehold.it/300x225',
-            url: 'http://fldslld'
+            image: 'assets/img/situation/couleur-situation.jpg',
+            url: 'http://www.couleursoleil-uv.fr/'
           },
           Cellois: {
             title: 'Le Cellois',
-            image: 'http://placehold.it/300x225',
-            url: 'http://fldslld'
+            image: 'assets/img/situation/cellois-situation.jpg',
+            url: 'http://www.celloishandball.fr/'
           }
         }
       }
     }
+})
+
+Vue.component('social', {
+  template:
+    `
+    <div class="social">
+      <a :href="social.url" v-for="social in socials">
+        <span class="icon">
+          <i :class="'fa fa-'+ social.name"></i>
+        </span>
+      </a>
+    <div>
+    `,
+  data() {
+    return {
+      socials: {
+        twitter: {
+          name: 'twitter',
+          url: 'https://twitter.com/BricePhatza'
+        },
+        github: {
+          name: 'github',
+          url: 'https://github.com/Phatza'
+        },
+        linkedin: {
+          name: 'linkedin',
+          url: 'https://www.linkedin.com/in/bricehpc'
+        }
+      }
+    }
+  }
 })
 
 // Instance VueJS

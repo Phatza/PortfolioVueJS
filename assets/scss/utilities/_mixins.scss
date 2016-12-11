@@ -50,7 +50,7 @@ $widescreen: 1180px !default;
 
 // Background Section
 @mixin bgSection($link) {
-  background: url($link) no-repeat fixed;
+  background: url($link) no-repeat;
   background-size: cover;
   background-position: center;
 }

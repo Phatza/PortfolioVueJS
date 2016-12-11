@@ -1,0 +1,137 @@
+// main: ./base.scss
+
+// DEFAULT Social component STYLE
+.social {
+  a {
+    border: none !important;
+    padding-right: 15px;
+    color: $grey !important;
+
+    &:hover {
+      color: $grey-darker !important;
+    }
+  }
+}
+
+// DEFAULT Section component STYLE
+main {
+    div[id] {
+        height: 100%;
+        color: $white;
+
+        .columns {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+
+            .column {
+                @include tablet-only {
+                  margin-left: 0;
+                };
+
+                .card {
+                    margin: 0 auto;
+                    width: 400px;
+
+                    @include mobile {
+                      width: 300px;
+                    }
+
+                    h1 {
+                        font-weight: bold;
+                    }
+
+                    a {
+                        color: $grey-darker;
+                        font-weight: bold;
+                        -webkit-transition: border-bottom 0.35s ease-out;
+                        transition: border-bottom 0.35s ease-out;
+
+                        &:hover {
+                            border-bottom: 1px solid $red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Animation played when enter
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+        -webkit-filter:blur(5px);
+        filter:blur(5px);
+    }
+}
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+        -webkit-filter:blur(5px);
+        filter:blur(5px);
+    }
+}
+
+.zoomIn {
+    -webkit-animation: zoomIn 0.7s;
+    animation: zoomIn 0.7s;
+}
+
+// Animation played when leave
+@-webkit-keyframes zoomOut {
+    0% {
+        opacity: 1;
+        -webkit-filter:blur(2px);
+        filter:blur(2px);
+    }
+
+    50% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+        -webkit-filter:blur(5px);
+        filter:blur(5px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes zoomOut {
+    0% {
+        opacity: 1;
+        -webkit-filter:blur(2px);
+        filter:blur(2px);
+    }
+
+    50% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+        -webkit-filter:blur(5px);
+        filter:blur(5px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.zoomOut {
+    -webkit-animation: zoomOut 0.5s;
+    animation: zoomOut 0.5s;
+}

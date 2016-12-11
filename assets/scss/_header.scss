@@ -14,13 +14,24 @@
   position: absolute;
   top: 100%;
   background: $white;
-  box-shadow: rgb(51, 51, 51) 0px 0px 20px;
   width: 100%;
+
+  a {
+    padding: 1rem;
+    color: $black;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover, &:visited, &:focus {
+      color: $black
+    }
+  }
 }
 
 .wide-devices {
   position: absolute;
   top: 50%;
+  -webkit-transform: translate(20%, -50%);
   transform: translate(20%, -50%);
   color: $black;
   z-index: 999;
@@ -41,7 +52,6 @@
         &::before, &::after {
           opacity: 1;
         	-webkit-transform: translateX(0px);
-        	-moz-transform: translateX(0px);
         	transform: translateX(0px);
         }
       }
@@ -49,55 +59,47 @@
       &::before {
         display: inline-block;
       	opacity: 0;
-      	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-      	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
-      	transition: transform 0.3s, opacity 0.2s;
+      	-webkit-transition: -webkit-transform .3s, opacity .2s, color 1s;
+      	transition: transform .3s, opacity .2s, color 1s;
         margin-right: 10px;
       	content: '<';
       	-webkit-transform: translateX(20px);
-      	-moz-transform: translateX(20px);
       	transform: translateX(20px);
       }
 
       &::after {
         display: inline-block;
       	opacity: 0;
-      	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-      	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
-      	transition: transform 0.3s, opacity 0.2s;
+      	-webkit-transition: -webkit-transform .3s, opacity .2s, color 1s;
+      	transition: transform .3s, opacity .2s, color 1s;
         margin-left: 10px;
       	content: '/>';
       	-webkit-transform: translateX(-20px);
-      	-moz-transform: translateX(-20px);
       	transform: translateX(-20px);
-      }
-    }
-    // If the link has active class
-    .active {
-
-      &::before {
-        display: inline-block;
-      	opacity: 1;
-      	content: '<';
-        margin-right: 25px;
-      }
-
-      &::after {
-        display: inline-block;
-      	opacity: 1;
-      	content: '/>';
-        margin-left: 25px;
       }
     }
   }
 }
 
-// Toggle Menu Button Style
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .7s;
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0;
+
+// If the link has active class
+.active {
+
+  &::before {
+    content: '<';
+    color: $red;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  &::after {
+    content: '/>';
+    color: $red;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
 }
 
 // Responsive Menu CSS Animation  when ENTER
@@ -107,8 +109,8 @@
     60%,
     75%,
     90% {
-        -webkit-animation-timing-function: cubic-bezier(0.215, .61, .355, 1);
-        animation-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
     }
     0% {
         opacity: 0;
@@ -140,8 +142,8 @@
     60%,
     75%,
     90% {
-        -webkit-animation-timing-function: cubic-bezier(0.215, .61, .355, 1);
-        animation-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
     }
     0% {
         opacity: 0;

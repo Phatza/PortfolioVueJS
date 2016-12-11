@@ -2336,9 +2336,13 @@ td, th { padding: 0; }
 
 @media screen and (min-width: 769px) and (max-width: 979px) { .nav-toggle { display: block !important; } }
 
-.small-devices { position: absolute; top: 100%; background: white; box-shadow: #333333 0px 0px 20px; width: 100%; }
+.small-devices { position: absolute; top: 100%; background: white; width: 100%; }
 
-.wide-devices { position: absolute; top: 50%; transform: translate(20%, -50%); color: #0a0a0a; z-index: 999; }
+.small-devices a { padding: 1rem; color: #0a0a0a; text-transform: uppercase; font-weight: bold; }
+
+.small-devices a:hover, .small-devices a:visited, .small-devices a:focus { color: #0a0a0a; }
+
+.wide-devices { position: absolute; top: 50%; -webkit-transform: translate(20%, -50%); transform: translate(20%, -50%); color: #0a0a0a; z-index: 999; }
 
 .wide-devices ul.menu-list { background: rgba(36, 36, 36, 0.3); }
 
@@ -2346,19 +2350,15 @@ td, th { padding: 0; }
 
 .wide-devices ul.menu-list a:hover { color: white; background: none; }
 
-.wide-devices ul.menu-list a:hover::before, .wide-devices ul.menu-list a:hover::after { opacity: 1; -webkit-transform: translateX(0px); -moz-transform: translateX(0px); transform: translateX(0px); }
+.wide-devices ul.menu-list a:hover::before, .wide-devices ul.menu-list a:hover::after { opacity: 1; -webkit-transform: translateX(0px); transform: translateX(0px); }
 
-.wide-devices ul.menu-list a::before { display: inline-block; opacity: 0; -webkit-transition: -webkit-transform 0.3s, opacity 0.2s; -moz-transition: -moz-transform 0.3s, opacity 0.2s; transition: transform 0.3s, opacity 0.2s; margin-right: 10px; content: '<'; -webkit-transform: translateX(20px); -moz-transform: translateX(20px); transform: translateX(20px); }
+.wide-devices ul.menu-list a::before { display: inline-block; opacity: 0; -webkit-transition: -webkit-transform .3s, opacity .2s, color 1s; transition: transform .3s, opacity .2s, color 1s; margin-right: 10px; content: '<'; -webkit-transform: translateX(20px); transform: translateX(20px); }
 
-.wide-devices ul.menu-list a::after { display: inline-block; opacity: 0; -webkit-transition: -webkit-transform 0.3s, opacity 0.2s; -moz-transition: -moz-transform 0.3s, opacity 0.2s; transition: transform 0.3s, opacity 0.2s; margin-left: 10px; content: '/>'; -webkit-transform: translateX(-20px); -moz-transform: translateX(-20px); transform: translateX(-20px); }
+.wide-devices ul.menu-list a::after { display: inline-block; opacity: 0; -webkit-transition: -webkit-transform .3s, opacity .2s, color 1s; transition: transform .3s, opacity .2s, color 1s; margin-left: 10px; content: '/>'; -webkit-transform: translateX(-20px); transform: translateX(-20px); }
 
-.wide-devices ul.menu-list .active::before { display: inline-block; opacity: 1; content: '<'; margin-right: 25px; }
+.active::before { content: '<'; color: #ff3860; opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
 
-.wide-devices ul.menu-list .active::after { display: inline-block; opacity: 1; content: '/>'; margin-left: 25px; }
-
-.fade-enter-active, .fade-leave-active { transition: opacity .7s; }
-
-.fade-enter, .fade-leave-active { opacity: 0; }
+.active::after { content: '/>'; color: #ff3860; opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
 
 @-webkit-keyframes bounceInDown { 0%, 100%, 60%, 75%, 90% { -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
@@ -2412,86 +2412,74 @@ td, th { padding: 0; }
 
 .bounceOutUp { -webkit-animation: bounceOutUp 1s; animation: bounceOutUp 1s; }
 
-main div[id] { height: 100%; text-align: center; color: white; }
+.social a { border: none !important; padding-right: 15px; color: #7a7a7a !important; }
+
+.social a:hover { color: #363636 !important; }
+
+main div[id] { height: 100%; color: white; }
 
 main div[id] .columns { display: flex; align-items: center; height: 100%; margin: 0; }
 
-main div[id] .columns .card { margin: 0 auto; }
+@media screen and (min-width: 769px) and (max-width: 979px) { main div[id] .columns .column { margin-left: 0; } }
 
-main div[id] .columns .card h1 { font-weight: bold; }
+main div[id] .columns .column .card { margin: 0 auto; width: 400px; }
 
-main div[id] .columns .card p { text-align: justify; }
+@media screen and (max-width: 768px) { main div[id] .columns .column .card { width: 300px; } }
 
-@-webkit-keyframes flipInX { 0% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0; }
-  40% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in; }
-  60% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    opacity: 1; }
-  80% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
-  100% { -webkit-transform: perspective(400px);
-    transform: perspective(400px); } }
+main div[id] .columns .column .card h1 { font-weight: bold; }
 
-@keyframes flipInX { 0% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0; }
-  40% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in; }
-  60% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    opacity: 1; }
-  80% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
-  100% { -webkit-transform: perspective(400px);
-    transform: perspective(400px); } }
+main div[id] .columns .column .card a { color: #363636; font-weight: bold; -webkit-transition: border-bottom 0.35s ease-out; transition: border-bottom 0.35s ease-out; }
 
-.flipInX { -webkit-backface-visibility: visible !important; backface-visibility: visible !important; -webkit-animation: flipInX 0.7s; animation: flipInX 0.7s; }
+main div[id] .columns .column .card a:hover { border-bottom: 1px solid #ff3860; }
 
-@-webkit-keyframes flipOutX { 0% { -webkit-transform: perspective(400px);
-    transform: perspective(400px); }
-  30% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    opacity: 1; }
-  100% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    opacity: 0; } }
+@-webkit-keyframes zoomIn { 0% { opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3); }
+  50% { opacity: 1;
+    -webkit-filter: blur(5px);
+    filter: blur(5px); } }
 
-@keyframes flipOutX { 0% { -webkit-transform: perspective(400px);
-    transform: perspective(400px); }
-  30% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    opacity: 1; }
-  100% { -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    opacity: 0; } }
+@keyframes zoomIn { 0% { opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3); }
+  50% { opacity: 1;
+    -webkit-filter: blur(5px);
+    filter: blur(5px); } }
 
-.flipOutX { -webkit-animation: flipOutX 0.7s; animation: flipOutX 0.7s; -webkit-backface-visibility: visible !important; backface-visibility: visible !important; }
+.zoomIn { -webkit-animation: zoomIn 0.7s; animation: zoomIn 0.7s; }
 
-#about { background: url("../img/a-propos-bg.jpg") no-repeat fixed; background-size: cover; background-position: center; }
+@-webkit-keyframes zoomOut { 0% { opacity: 1;
+    -webkit-filter: blur(2px);
+    filter: blur(2px); }
+  50% { opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+    -webkit-filter: blur(5px);
+    filter: blur(5px); }
+  100% { opacity: 0; } }
 
-#about .card { background-color: transparent; box-shadow: none; }
+@keyframes zoomOut { 0% { opacity: 1;
+    -webkit-filter: blur(2px);
+    filter: blur(2px); }
+  50% { opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+    -webkit-filter: blur(5px);
+    filter: blur(5px); }
+  100% { opacity: 0; } }
 
-#about .card img { border-radius: 50%; margin: 0 auto; height: 230px; width: 230px; }
+.zoomOut { -webkit-animation: zoomOut 0.5s; animation: zoomOut 0.5s; }
 
-#about .card .card-content { background-color: white; box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1); }
+#about { background: url("../img/a-propos-bg.jpg") no-repeat; background-size: cover; background-position: center; }
 
-#kcalm { background: url("../img/keep-calm-bg.jpg") no-repeat fixed; background-size: cover; background-position: center; }
+#kcalm { background: url("../img/keep-calm-bg.jpg") no-repeat; background-size: cover; background-position: center; }
 
-#mpp { background: url("../img/mpp-bg.jpg") no-repeat fixed; background-size: cover; background-position: center; }
+#mpp { background: url("../img/mpp-bg.jpg") no-repeat; background-size: cover; background-position: center; }
 
-#bgm { background: url("../img/bgm-bg.jpg") no-repeat fixed; background-size: cover; background-position: center; }
+#bgm { background: url("../img/bgm-bg.jpg") no-repeat; background-size: cover; background-position: center; }
 
-#wp { display: flex; align-items: center; }
+#wp { background: url("../img/wp-bg.jpg") no-repeat; background-size: cover; background-position: center; display: flex; align-items: center; }
 
-#wp .columns { margin-left: 30%; flex-wrap: wrap; height: auto; }
+#wp .columns { margin-left: 30%; flex-wrap: wrap; height: auto; text-align: center; }
+
+@media screen and (max-width: 979px) { #wp .columns { margin-left: 0; height: 100%; } }
