@@ -112,6 +112,7 @@ Vue.component('wordpress', {
     }
 })
 
+// Social icons component
 Vue.component('social', {
   template:
     `
