@@ -2336,6 +2336,8 @@ td, th { padding: 0; }
 
 @media screen and (min-width: 769px) and (max-width: 979px) { .nav-toggle { display: block !important; } }
 
+nav img { height: 30px; margin-top: 10px; margin-left: 10px; }
+
 .small-devices { position: absolute; top: 100%; background: white; width: 100%; }
 
 .small-devices a { padding: 1rem; color: #0a0a0a; text-transform: uppercase; font-weight: bold; }
